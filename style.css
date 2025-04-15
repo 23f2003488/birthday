@@ -1,0 +1,190 @@
+/* Base styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Comic Sans MS', cursive;
+    background: linear-gradient(135deg, #fceabb, #f8b500, #fceabb);
+    background-size: 400% 400%;
+    animation: gradient 20s ease infinite;
+    overflow: hidden;
+    height: 100vh;
+}
+
+@keyframes gradient {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+/* Slideshow */
+#slideshow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 20px;
+}
+
+.slide {
+    display: none;
+    font-size: 2rem;
+    padding: 30px;
+    color: #fff;
+    border-radius: 25px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    max-width: 90%;
+    animation: fade 1s ease-in-out;
+    line-height: 1.5;
+}
+
+/* Different colors for each slide */
+.slide:nth-child(2) {
+    background: rgba(255, 255, 153, 0.85); /* light yellow */
+    color: #d6336c;
+    border: 5px dashed #ffcc00;
+}
+
+.slide:nth-child(3) {
+    background: rgba(153, 255, 204, 0.85); /* mint green */
+    color: #ff5722;
+    border: 5px dashed #00bfa5;
+}
+
+.slide:nth-child(4) {
+    background: rgba(204, 204, 255, 0.85); /* lavender */
+    color: #673ab7;
+    border: 5px dashed #7e57c2;
+}
+
+.slide:nth-child(5) {
+    background: rgba(255, 204, 229, 0.85); /* pink */
+    color: #c2185b;
+    border: 5px dashed #f48fb1;
+}
+
+/* First Slide with Baby Photo Background */
+/* First Slide with Baby Photo Background */
+/* SLIDE 1 - Birthday Banner */
+/* First Slide with Baby Photo Background and Text Box Below */
+.first-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    padding: 20px;
+    overflow: hidden;
+    background: none;
+    position: relative;
+}
+
+.first-slide .baby-photo {
+    flex: 0 0 auto;
+    width: 100%;
+    max-height: 60%;
+    background-image: url('baby-photo.jpg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    margin-bottom: 10px;
+}
+
+.first-slide .slide-content {
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    border-radius: 25px;
+    border: 4px dashed #ffcc00;
+    box-shadow: 0 0 15px #ff8a65;
+    color: #ff4081;
+    max-width: 85%;
+    text-align: center;
+    font-size: 1.6rem;
+}
+
+.first-slide .baby-photo {
+    width: 100%;
+    height: 60vh; /* gives it visible height */
+    background-image: url('baby-photo.jpg');
+    background-size: cover; /* fills the box while maintaining aspect ratio */
+    background-position: center top;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    margin-bottom: 15px;
+}
+
+
+
+.slide h2 {
+    margin: 0;
+}
+
+@keyframes fade {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Floating emojis */
+.balloon-container,
+.cake-container,
+.cracker-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.balloon,
+.cake {
+    position: absolute;
+    bottom: -100px;
+    font-size: 2.5rem;
+    animation: float 10s linear infinite;
+    opacity: 0.9;
+}
+
+.cake {
+    animation-duration: 12s;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(-120vh);
+        opacity: 0;
+    }
+}
+
+/* Crackers */
+.cracker {
+    position: absolute;
+    font-size: 2.5rem;
+    animation: explode 1s ease-out forwards;
+    opacity: 0;
+}
+
+@keyframes explode {
+    0% {
+        transform: scale(0.3);
+        opacity: 0.3;
+    }
+    50% {
+        transform: scale(1.6);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
